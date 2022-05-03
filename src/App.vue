@@ -30,7 +30,49 @@
         <label>
           <e-input></e-input>
         </label>
-        <p>в колонке <a href="#">Нужно сделать</a></p>
+        <p>
+          в колонке
+          <a href="#">
+            <e-select
+              :data="{
+                placeholder: 'Нужно сделать',
+                options: [
+                  {
+                    name: 'Нужно сделать',
+                  },
+                  {
+                    name: 'В процессе',
+                  },
+                  {
+                    name: 'Готово',
+                  },
+                ],
+              }"
+              :styleConfig="{
+                fontFamily: 'Open Sans',
+                valueColor: 'black',
+                valueFontWeight: '500',
+                placeholderColor: 'gray',
+                placeholderFontSize: '12px',
+                labelColor: 'black',
+                labelFontWeight: '600',
+                labelFontSize: '12px',
+                helperTextColor: 'gray',
+                helperTextFontWeight: '400',
+                helperTextFontSize: '10px',
+                borderColor: 'gray',
+                borderRadius: '6px',
+                backgroundColor: 'white',
+                focusBorderColor: 'blue',
+                filledBackgroundColor: 'yellow',
+                filledFontColor: 'blue',
+                crossColor: 'gray',
+                arrowColor: 'gray',
+                errorColor: 'red',
+              }"
+            ></e-select
+          ></a>
+        </p>
       </div>
 
       <svg
@@ -80,12 +122,7 @@
           <p class="task__tag task__tag--validation-message">
             {{ `Введите Описание` }}
           </p>
-          <p>
-            <label class="grow-wrap">
-              <textarea class="details-modal-edit-inputs edit-inputs-textarea">
-              </textarea>
-            </label>
-          </p>
+          <e-textarea></e-textarea>
         </div>
       </div>
     </div>
@@ -115,7 +152,15 @@
       <div class="task-activity">
         <ul>
           <li>
-            <span class="task-icon task-icon--edit"></span>
+            <e-avatar
+              :data="{
+                size: 'sm',
+                color: 'black',
+                bgColor: 'red',
+                isOnline: 'true',
+                name: 'ilya',
+              }"
+            ></e-avatar>
             <b>Илья</b> написал коммент
             <time>April 10</time>
           </li>
