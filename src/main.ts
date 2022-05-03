@@ -3,4 +3,9 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-createApp(App).use(store).use(router).mount("#app");
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import egalWidgets from "@egalteam/widget-library";
+import "@egalteam/widget-library/dist/style.css";
+
+createApp(App).use(egalWidgets).use(store).use(router).mount("#app");
